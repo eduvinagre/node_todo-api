@@ -77,23 +77,25 @@ For detailed request/response formats, please refer to the API documentation.
 
 ## Project Structure
 
-> node_todo-api<br>
-> ├── src/<br>
-> │   ├── config/<br>
-> │   │   └── database.js<br>
-> │   ├── controllers/<br>
-> │   │   └── todoController.js<br>
-> │   ├── models/<br>
-> │   │   └── todo.js<br>
-> │   ├── routes/<br>
-> │   │   └── todoRoutes.js<br>
-> │   ├── services/<br>
-> │   │   └── todoService.js<br>
-> │   └── server.js<br>
-> ├── .env<br>
-> ├── .gitignore<br>
-> ├── package.json<br>
-> └── README.md<br>
+```
+node_todo-api<br>
+├── src/<br>
+│   ├── config/<br>
+│   │   └── database.js<br>
+│   ├── controllers/<br>
+│   │   └── todoController.js<br>
+│   ├── models/<br>
+│   │   └── todo.js<br>
+│   ├── routes/<br>
+│   │   └── todoRoutes.js<br>
+│   ├── services/<br>
+│   │   └── todoService.js<br>
+│   └── server.js<br>
+├── .env<br>
+├── .gitignore<br>
+├── package.json<br>
+└── README.md<br>
+```
 
 - `config/`: Contains database configuration
 - `controllers/`: Handles the request/response logic
