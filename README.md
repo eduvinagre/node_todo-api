@@ -28,7 +28,80 @@ This is a RESTful API for managing ToDo items, built with **Node.js, Express, Se
 
 ## Installation
 
-1. Clone the repository:
+### 1. Clone the repository:
 
-```git clone https://github.com/yourusername/todo-api.git```
-```cd todo-api```
+> ```git clone https://github.com/eduvinagre/node_todo-api.git```<br>
+> ```cd todo-api```
+
+### 2. Install dependencies:
+
+> ```npm install```
+
+## Configuration
+
+### 1. Create a `.env` file in the root directory with the following content:
+
+> ```DB_NAME=your_database_name```
+> ```DB_PASSWORD=your_database_password```
+> ```DB_USER=your_database_user```
+> ```DB_HOST=localhost```
+> ```DB_PORT=5432```
+> ```PORT=3000```
+
+### 2. Replace the placeholder values with your actual PostgreSQL database credentials.
+
+## Running the Application
+
+1. For development:
+
+> ```npm run dev```
+
+2. For production:
+
+> ```npm start```
+
+The server will start running on `http://localhost:3000` (or the port specified in your .env file).
+
+## API Endpoints
+
+- `GET /todos`: Get all todos
+- `GET /todos?userId=<userId>&completed=<true|false>`: Get filtered todos
+- `GET /todos/:id`: Get a specific todo
+- `POST /todos`: Create a new todo
+- `PATCH /todos/:id`: Update a specific todo
+- `DELETE /todos/:id`: Delete a specific todo
+- `PATCH /todos/update-many`: Update multiple todos
+- `DELETE /todos/delete-many`: Delete multiple todos
+
+For detailed request/response formats, please refer to the API documentation.
+
+## Project Structure
+
+node_todo-api
+├── src/
+│   ├── config/
+│   │   └── database.js
+│   ├── controllers/
+│   │   └── todoController.js
+│   ├── models/
+│   │   └── todo.js
+│   ├── routes/
+│   │   └── todoRoutes.js
+│   ├── services/
+│   │   └── todoService.js
+│   └── server.js
+├── .env
+├── .gitignore
+├── package.json
+└── README.md
+
+- `config/`: Contains database configuration
+- `controllers/`: Handles the request/response logic
+- `models/`: Defines the database models
+- `routes/`: Defines the API routes
+- `services/`: Contains the business logic
+- `server.js`: The main application file
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
