@@ -1,7 +1,9 @@
 # Node ToDo API
 
 This is a RESTful API for managing ToDo items, built with **Node.js, Express, Sequelize, and PostgreSQL**.
-
+<p align="center">
+    <img src="https://skillicons.dev/icons?i=nodejs,express,sequelize,postgres&theme=dark" />
+</p>
 ## Table of Contents
 
 - [Features](#features)
