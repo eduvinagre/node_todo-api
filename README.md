@@ -41,12 +41,12 @@ This is a RESTful API for managing ToDo items, built with **Node.js, Express, Se
 
 1. Create a `.env` file in the root directory with the following content:
 
-> `DB_NAME=your_database_name`<br>
-> `DB_PASSWORD=your_database_password`<br>
-> `DB_USER=your_database_user`<br>
-> `DB_HOST=localhost`<br>
-> `DB_PORT=5432`<br>
-> `PORT=3000`
+> DB_NAME=your_database_name<br>
+> DB_PASSWORD=your_database_password<br>
+> DB_USER=your_database_user<br>
+> DB_HOST=localhost<br>
+> DB_PORT=5432<br>
+> PORT=3000
 
 2. Replace the placeholder values with your actual PostgreSQL database credentials.
 
