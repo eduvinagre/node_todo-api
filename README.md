@@ -30,10 +30,10 @@ This is a RESTful API for managing ToDo items, built with **Node.js, Express, Se
 
 ### 1. Clone the repository:
 ```
-git clone https://github.com/eduvinagre/node_todo-api.git`<br>
+git clone https://github.com/eduvinagre/node_todo-api.git`
 ```
 ```
-cd todo-api
+cd node_todo-api
 ```
 ### 2. Install dependencies:
 ```
@@ -43,11 +43,11 @@ npm install
 
 1. Create a `.env` file in the root directory with the following content:
 ```
-DB_NAME=your_database_name<br>
-DB_PASSWORD=your_database_password<br>
-DB_USER=your_database_user<br>
-DB_HOST=localhost<br>
-DB_PORT=5432<br>
+DB_NAME=your_database_name
+DB_PASSWORD=your_database_password
+DB_USER=your_database_user
+DB_HOST=localhost
+DB_PORT=5432
 PORT=3000
 ```
 
@@ -57,11 +57,11 @@ PORT=3000
 
 1. For development:
 ```
-npm run dev`
+npm run dev
 ```
 2. For production:
 ```
-npm start`
+npm start
 ```
 The server will start running on `http://localhost:3000` (or the port specified in your .env file).
 
@@ -81,23 +81,23 @@ For detailed request/response formats, please refer to the API documentation.
 ## Project Structure
 
 ```
-node_todo-api<br>
-├── src/<br>
-│   ├── config/<br>
-│   │   └── database.js<br>
-│   ├── controllers/<br>
-│   │   └── todoController.js<br>
-│   ├── models/<br>
-│   │   └── todo.js<br>
-│   ├── routes/<br>
-│   │   └── todoRoutes.js<br>
-│   ├── services/<br>
-│   │   └── todoService.js<br>
-│   └── server.js<br>
-├── .env<br>
-├── .gitignore<br>
-├── package.json<br>
-└── README.md<br>
+node_todo-api
+├── src/
+│   ├── config/
+│   │   └── database.js
+│   ├── controllers/
+│   │   └── todoController.js
+│   ├── models/
+│   │   └── todo.js
+│   ├── routes/
+│   │   └── todoRoutes.js
+│   ├── services/
+│   │   └── todoService.js
+│   └── server.js
+├── .env
+├── .gitignore
+├── package.json
+└── README.md
 ```
 
 - `config/`: Contains database configuration
