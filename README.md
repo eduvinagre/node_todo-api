@@ -30,7 +30,7 @@ This is a RESTful API for managing ToDo items, built with **Node.js, Express, Se
 
 ### 1. Clone the repository:
 ```
-git clone https://github.com/eduvinagre/node_todo-api.git`
+git clone https://github.com/eduvinagre/node_todo-api.git
 ```
 ```
 cd node_todo-api
