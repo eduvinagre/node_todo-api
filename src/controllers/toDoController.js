@@ -1,6 +1,14 @@
 const todoService = require('../services/toDoService');
 
 const ToDoController = {
+  toDTO(toDo) {
+    return {
+      id: toDo.id,
+      title: toDo.title,
+      completed: toDo.completed,
+    };
+  },
+
   async getAllToDos(req, res) {
     try {
       const todos = await todoService.getAllToDos(req.query);
@@ -21,20 +29,22 @@ const ToDoController = {
   },
 
   async createToDo(req, res) {
+    const { id, ...toDoData } = req.body;
     try {
-      const todo = await todoService.createToDo(req.body);
-      res.status(201).json(todo);
+      const toDo = await todoService.createToDo(toDoData);
+      res.status(201).json(toDo);
     } catch (error) {
       res.status(400).json({ message: error.message });
     }
   },
 
   async updateToDo(req, res) {
+    const { id } = req.params;
     try {
-      const todo = await todoService.updateToDo(req.params.id, req.body);
+      const todo = await todoService.updateToDo(id, req.body);
       res.json(todo);
     } catch (error) {
-      if (error.message === 'Todo not found') {
+      if (error.message === 'ToDo not found') {
         res.status(404).json({ message: error.message });
       } else {
         res.status(400).json({ message: error.message });
@@ -43,35 +53,23 @@ const ToDoController = {
   },
 
   async deleteToDo(req, res) {
+    const { id } = req.params;
     try {
-      const result = await todoService.deleteToDo(req.params.id);
+      const result = await todoService.deleteToDo(id);
       res.json(result);
     } catch (error) {
-      if (error.message === 'Todo not found') {
+      if (error.message === 'ToDo not found') {
         res.status(404).json({ message: error.message });
       } else {
         res.status(500).json({ message: error.message });
       }
     }
   },
-
-  async updateManyToDos(req, res) {
-    try {
-      const updatedTodos = await todoService.updateManyToDos(req.body.todos);
-      res.json({ message: `${updatedTodos.length} todos updated successfully`, updatedTodos });
-    } catch (error) {
-      res.status(500).json({ message: error.message });
-    }
-  },
-
-  async deleteManyToDos(req, res) {
-    try {
-      const deletedCount = await todoService.deleteManyToDos(req.body.ids);
-      res.json({ message: `${deletedCount} todos deleted successfully` });
-    } catch (error) {
-      res.status(500).json({ message: error.message });
-    }
-  },
 };
 
 module.exports = ToDoController;
+
+
+
+
+

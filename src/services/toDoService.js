@@ -21,21 +21,21 @@ const ToDoService = {
   },
 
   async updateToDo(id, updates) {
-    const toDo = await toDo.findByPk(id);
+    const toDo = await ToDo.findByPk(id);
     if (!toDo) throw new Error('ToDo not found');
     return toDo.update(updates);
   },
 
   async deleteToDo(id) {
-    const toDo = await toDo.findByPk(id);
+    const toDo = await ToDo.findByPk(id);
     if (!toDo) throw new Error('ToDo not found');
     await toDo.destroy();
     return { message: 'ToDo deleted successfully' };
   },
 
-  async updateManyToDos(toDos) {
-    return ToDo.bulkCreate(toDos, {
-      updateOnDuplicate: ['completed', 'title', 'userId'],
+  async updateManyToDos(ToDos) {
+    return ToDo.bulkCreate(ToDos, {
+      updateOnDuplicate: ['title', 'completed'],
     });
   },
 

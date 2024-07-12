@@ -66,7 +66,7 @@ npm run dev
 ```
 npm start
 ```
-The server will start running on `http://localhost:3000` (or the port specified in your .env file).
+The server will start running on `http://localhost:3005` (or the port specified in your .env file).
 
 ## API Endpoints
 
@@ -76,8 +76,6 @@ The server will start running on `http://localhost:3000` (or the port specified 
 - `POST /todos`: Create a new todo
 - `PATCH /todos/:id`: Update a specific todo
 - `DELETE /todos/:id`: Delete a specific todo
-- `PATCH /todos/update-many`: Update multiple todos
-- `DELETE /todos/delete-many`: Delete multiple todos
 
 For detailed request/response formats, please refer to the API documentation.
 

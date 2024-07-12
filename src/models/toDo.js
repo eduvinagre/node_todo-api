@@ -1,27 +1,22 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
-const ToDo = sequelize.define('Todo', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
+const ToDo = sequelize.define(
+  'Todo',
+  {
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    completed: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   },
-  userId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-  completed: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: false,
-  },
-  title: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-}, {
-  tableName: 'todos',
-  updatedAt: false
-});
+  {
+    tableName: 'todos',
+  }
+);
 
 module.exports = ToDo;
+
